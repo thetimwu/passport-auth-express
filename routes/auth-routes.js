@@ -17,7 +17,7 @@ router.get(
   })
 );
 
-router.get("/google/redirect", (req, res) => {
+router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
   res.send("you are redirected from google to this page");
 });
 
